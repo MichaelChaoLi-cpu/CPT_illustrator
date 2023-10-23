@@ -1,6 +1,8 @@
 # CPT_illustrator
 This is the repo to build CPT illustrator for deploying CPT
 
+Turn on cpt_illustrator vm:
+
 ## Using CPT-illustrator
 To the public user:
 ```
@@ -42,4 +44,6 @@ download results
 gcloud compute scp --recurse cpt_illustrator@aiesg-cpt-v1-illustrator:/home/cpt_illustrator/'echo $ADDRESS' Downloads/Results --zone=asia-southeast1-b
 ```
 
+**shut down that vm**
 
+**CAUTION this VM is expensive!!!**
