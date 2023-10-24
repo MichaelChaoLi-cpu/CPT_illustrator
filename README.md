@@ -18,6 +18,7 @@ Activate the env
 conda activate tf
 ```
 
+On MacBook terminal
 Data Transfer by gcloud cli
 ```
 gcloud compute scp Downloads/annual-report-2022.pdf cpt_illustrator@aiesg-cpt-v1-illustrator:/home/cpt_illustrator/RunPDF/GoldmanSachs2022.pdf --zone=asia-southeast1-b
@@ -25,7 +26,7 @@ gcloud compute scp Downloads/annual-report-2022.pdf cpt_illustrator@aiesg-cpt-v1
 "Downloads/annual-report-2022.pdf" this is the file address on your computer.
 "GoldmanSachs2022.pdf" this is filename on the VM.
 
-
+On VM Linux
 begin the analysis
 ```
 ls RunPDF
@@ -34,7 +35,7 @@ FILENAME=$(basename "$INPUT_FILE" .pdf)
 echo "$FILENAME"
 ADDRESS="ResultToDownload/$FILENAME"
 echo $ADDRESS
-python run.py
+nohup python run.py >> record.txt &
 ```
 result location
 ```
@@ -42,6 +43,7 @@ echo $ADDRESS
 ```
 copy this output
 
+On MacBook terminal
 download results
 ```
 gcloud compute scp --recurse cpt_illustrator@aiesg-cpt-v1-illustrator:/home/cpt_illustrator/'echo $ADDRESS' Downloads/Results --zone=asia-southeast1-b

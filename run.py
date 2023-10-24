@@ -9,8 +9,11 @@ file_result_folder = files[0].split('/')[1].split('.')[0]
 
 # make the ResultFolder
 location = os.path.join('ResultToDownload', file_result_folder)
-os.makedirs(location)
-print(f"Folder '{location}' created successfully.")
+if not os.path.exists(location):
+    os.makedirs(location)
+    print(f"Folder '{location}' created successfully.")
+else:
+    print(f"Folder '{location}' already exists.")
 
 # AppEncoder
 script_path = "AppEncoder.py"
