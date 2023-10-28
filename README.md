@@ -26,6 +26,15 @@ gcloud compute scp Downloads/annual-report-2022.pdf cpt_illustrator@aiesg-cpt-v1
 "Downloads/annual-report-2022.pdf" this is the file address on your computer.
 "GoldmanSachs2022.pdf" this is filename on the VM.
 
+```
+ls record.txt
+```
+if nothing found goog;
+else
+```
+rm record.txt
+```
+
 On VM Linux
 begin the analysis
 ```
@@ -35,7 +44,7 @@ FILENAME=$(basename "$INPUT_FILE" .pdf)
 echo "$FILENAME"
 ADDRESS="ResultToDownload/$FILENAME"
 echo $ADDRESS
-nohup python run.py >> record.txt &
+nohup python run.py > record.txt &
 ```
 result location
 ```
